@@ -1,0 +1,50 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabualha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/09 11:38:11 by mabualha          #+#    #+#             */
+/*   Updated: 2026/06/22 16:12:09 by mabualha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include <stddef.h>
+
+void	*ft_memset(void *s, int c, size_t n)
+{
+	unsigned	char	*ptr;
+	size_t	i;
+
+	ptr = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		ptr[i] = (unsigned char)c;
+		i++;
+	}
+	return (s);
+}
+
+#include <stdio.h>
+
+int	main(void)
+{
+	char	str1[] = "Hello";
+	char	str2[] = "Mohammed";
+	char	str3[] = "42 Amman";
+
+	printf("Before 1: %s\n", str1);
+	ft_memset(str1, 'X', 3);
+	printf("After  1: %s\n\n", str1);
+
+	printf("Before 2: %s\n", str2);
+	ft_memset(str2, '*', 4);
+	printf("After  2: %s\n\n", str2);
+
+	printf("Before 3: %s\n", str3);
+	ft_memset(str3, 'A', 10);
+	printf("After  3: %s\n", str3);
+
+	return (0);
+}
