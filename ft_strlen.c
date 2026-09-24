@@ -21,10 +21,3 @@ size_t	ft_strlen(const char *s)
 		count++;
 	return (count);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	printf("%zu\n", ft_strlen("Hello"));
-	return (0);
-}*/

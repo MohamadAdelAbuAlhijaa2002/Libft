@@ -24,14 +24,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s);
 	return (NULL);
 }
-/*
-
-
-#include <stdio.h>
-int	main()
-{
-	printf("%s\n", ft_strchr("Hello", 'H'));
-	printf("%s\n", ft_strchr("Hello", 'l'));
-	printf("%s\n", ft_strchr("Hello", 's'));
-	return (0);
-}*/
