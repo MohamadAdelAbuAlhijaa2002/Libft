@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabualha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 11:38:11 by mabualha          #+#    #+#             */
-/*   Updated: 2026/09/24 17:02:24 by mabualha         ###   ########.fr       */
+/*   Created: 2026/09/21 16:15:06 by mabualha          #+#    #+#             */
+/*   Updated: 2026/09/24 17:02:08 by mabualha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stddef.h>
+#include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned char	*ptr;
-	size_t			i;
+	char	*sub;
+	size_t	i;
+	size_t	s_len;
 
-	ptr = (unsigned char *)s;
+	if (!s)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	if (len > s_len - start)
+		len = s_len - start;
+	sub = malloc(len + 1);
+	if (!sub)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		ptr[i] = (unsigned char)c;
+		sub[i] = s[start + i];
 		i++;
 	}
-	return (s);
+	sub[i] = '\0';
+	return (sub);
 }
