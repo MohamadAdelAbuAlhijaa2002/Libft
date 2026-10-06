@@ -9,7 +9,7 @@
 /*   Updated: 2026/10/06 18:50:07 by mabualha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
